@@ -15,6 +15,7 @@ class Instructor::CoursesController < ApplicationController
     end
   end
 
+
   def show
   end
 
