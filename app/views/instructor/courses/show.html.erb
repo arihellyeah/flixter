@@ -1,3 +1,4 @@
+
 <script>
   $(function() {
     $('.lessons').sortable({
@@ -6,7 +7,10 @@
           type: 'PUT',
           url: ui.item.data('update-url'),
           dataType: 'json',
-          data: { lesson: { row_order_position: ui.item.index() } }
+          data: { lesson: { row_order_position: ui.item.index() } },
+          headers: {
+          'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
+}
         });
       }
     });
@@ -18,7 +22,10 @@
           type: 'PUT',
           url: ui.item.data('update-url'),
           dataType: 'json',
-          data: { section: { row_order_position: ui.item.index() } }
+          data: { section: { row_order_position: ui.item.index() } },
+          headers: {
+          'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
+}
         });
       }
     });
