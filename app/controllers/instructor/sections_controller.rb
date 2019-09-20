@@ -24,7 +24,7 @@ class Instructor::SectionsController < ApplicationController
 
   helper_method :current_section
   def current_section
-    @current_section ||= Course.find(params[:course_id])
+    @current_section ||= Section.find(params[:section_id])
   end
 
   def require_authorized_for_current_course
