@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
   before_action :authenticate_user!
   before_action :require_enrolled_for_user, only: [:show]
+  skip_before_action :verify_authenticity_token, only: [:show]
   def show
   end
 
